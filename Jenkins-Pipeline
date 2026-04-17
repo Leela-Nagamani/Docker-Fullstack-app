@@ -1,1 +1,23 @@
+pipeline {
+    agent any
 
+    stages {
+        stage('Clone') {
+            steps {
+                git 'https://github.com/Leela-Nagamani/Docker-Fullstack-app.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh 'echo "Building application..."'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                sh 'echo "Running tests..."'
+            }
+        }
+    }
+}
